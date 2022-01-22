@@ -1,0 +1,160 @@
+.inside-wrapper {
+  position: relative;
+}
+.hood {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  background-color: #aeaeaf;
+  top: -200px;
+  left: 25%;
+  transform: rotate(45deg);
+  border-radius: 55px;
+}
+.hood::after {
+  content: "";
+  width: 129px;
+  top: 16px;
+  height: 129px;
+  position: absolute;
+  background-color: #000000;
+  border-top-left-radius: 120px;
+  border-top-right-radius: 45px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 50px;
+  left: 17px;
+}
+.spects {
+  width: 100px;
+  height: 50px;
+  transform: rotate(135deg);
+  position: absolute;
+  top: 58px;
+  left: 33px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.spects span {
+  width: 43px;
+  height: 27px;
+  background-color: #5d5959;
+  border: solid 2px #cccaca;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.shoulder {
+  width: 300px;
+  height: 210px;
+  background-color: #aeaeaf;
+  border-radius: 50%;
+  top: -55px;
+  position: absolute;
+}
+.neck {
+  background-color: grey;
+  width: 20%;
+  height: 17%;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin: 2px auto;
+  display: flex;
+  justify-content: center;
+}
+.neck::after {
+  content: "";
+  position: absolute;
+  background-color: #000000;
+  width: 17%;
+  height: 12%;
+  margin: -3px auto;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.lap-screen {
+  width: 300px;
+  height: 180px;
+  background: #313131;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lap-screen::after {
+  content: "";
+  background-color: white;
+  border-bottom: solid 20px white;
+  border-left: solid 10px #313131;
+  border-right: solid 10px #313131;
+}
+.base {
+  position: absolute;
+  bottom: -9px;
+  background-color: black;
+  width: 100%;
+  height: 8px;
+  border-radius: 2px;
+}
+.base::after {
+  content: "";
+  width: 70%;
+  position: absolute;
+  height: 5px;
+  background-color: black;
+  top: -3px;
+  left: 15%;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.overlay {
+  width:100vw;
+    height:100vh;
+  background-color: #004e00;
+  position: absolute;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 72px;  
+}
+@media (max-width:900px) {
+  .overlay {
+    font-size: 36px;
+  }
+}
+
+
+<div class="hacker-wrapper">
+  <div class="inside-wrapper">  
+    <div class="person">
+      <div class="hood">
+        <div class="spects">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="shoulder">
+        <div class="neck"></div>
+      </div>
+    </div>
+    <div class="lap-screen">
+    <span class="base"></span>
+  </div> 
+  </div>
+</div>
+
+$(document).ready(function() {
+  setTimeout(function() {
+    $('body').addClass("hacked");
+    $('body').append('<div class="overlay"><h1>HACKED !!!!</h1></div>')
+	}, 10000);
+});
